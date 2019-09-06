@@ -1,12 +1,17 @@
 {
   "name": "react-thumbnail-extractor",
   "version": "0.0.2",
-  "description": "React Component to extract thumnails of a giving video\"",
-  "main": "index.js",
+  "description": "React Component to extract thumbnails of a giving video\"",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/babel src --out-file index.js"
+    "build": "babel src --out-dir dist",
+    "prepublish": "npm run build"
   },
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/antoniopacheco/react-thumbnail-extractor.git"
