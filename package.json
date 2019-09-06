@@ -1,6 +1,6 @@
 {
   "name": "react-thumbnail-extractor",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Component to extract thumbnails of a giving video\"",
   "main": "dist/index.js",
   "scripts": {
