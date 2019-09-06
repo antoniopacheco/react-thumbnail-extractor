@@ -20,6 +20,9 @@ export default class ThumbnailExtractor extends Component {
     this.maxWidth = props.maxWidth || 1280;
     this.maxHeight = props.maxHeight || 1280;
     this.count = props.count || 8;
+    this.state = {
+        captures: []
+    }
   }
 
   getTime = () => {
@@ -50,6 +53,7 @@ export default class ThumbnailExtractor extends Component {
 
     //Save it to the array
     this.captures.push(image);
+    this.setState({captures: this.captures})
     this.capturesDetailed[counter].url = image;
     this.capturesDetailed[counter].captureTime = statTime.diff;
 
@@ -179,7 +183,7 @@ export default class ThumbnailExtractor extends Component {
     this.videoHtml = videoHtml;
     this.video = this.videoHtml;
     this.video.onloadedmetadata = () => {
-      onStartCapture && onStartCapture(this.captures);
+      onStartCapture && onStartCapture(this.state.captures);
       this.video.play();
     };
     this.video.onplay = () => {
@@ -205,11 +209,12 @@ export default class ThumbnailExtractor extends Component {
   }
 
   render() {
-    const {videoFile} = this.props;
-    if (!videoFile) {
+    const {videoFile, displayImages, thumbnailsClass} = this.props;
+    if (!videoFile || !displayImages) {
       return null;
     }
-
-    return <div>I am a dummy react npm module</div>;
+    return this.state.captures.map((image, key)=>{
+       return <img className={thumbnailsClass} key={`thumbnail_image_${key}`} src={image} />
+    })
   }
 }

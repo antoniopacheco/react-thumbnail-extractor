@@ -36,6 +36,8 @@ render(){
 You can pass the following options as props to `ThumbnailExtractor`:
 
 * videoFile : video
+* displayImages: Boolean, to render images in the component
+* thumbnailsClass: String, class to be added to images
 * maxWidth: Integer, max width of the generated thumbnails
 * maxHeight: Integer, max height of the generated thumbnails
 * count: Integer, number of thumbnails to get extracted from the video, default: 8
