@@ -7,7 +7,7 @@ Based on [SCRMHub/clientside-video-thumbnails](https://github.com/SCRMHub/client
 
 ## Demo
 
-Comming up
+[https://antoniopacheco.github.io/react-thumbnail-extractor-demo/](https://antoniopacheco.github.io/react-thumbnail-extractor-demo/)
 
 ## Installation
 
